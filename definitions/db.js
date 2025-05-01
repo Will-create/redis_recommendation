@@ -1,0 +1,1 @@
+require('querybuilderpg').init('default', CONF.database, 10, ERROR('QueryBuilder'));

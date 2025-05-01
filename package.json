@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "querybuilderpg": "^1.0.24",
+    "redis": "^5.0.0"
+  }
+}
