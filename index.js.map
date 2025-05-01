@@ -1,1 +1,72 @@
-{}
+{
+	"routes": [
+		{
+			"id": "tracking_view",
+			"method": "API",
+			"url": "/api/",
+			"auth": 1,
+			"owner": "controller_api",
+			"input": "*userid:String,itemid:String,meta:Object"
+		},
+		{
+			"id": "tracking_purchase",
+			"method": "API",
+			"url": "/api/",
+			"auth": 1,
+			"owner": "controller_api",
+			"input": "*userid:String,itemid:String,meta:Object"
+		},
+		{
+			"id": "tracking_wishlist",
+			"method": "API",
+			"url": "/api/",
+			"auth": 1,
+			"owner": "controller_api",
+			"input": "*userid:String,itemid:String,meta:Object"
+		},
+		{
+			"id": "tracking_cart",
+			"method": "API",
+			"url": "/api/",
+			"auth": 1,
+			"owner": "controller_api",
+			"input": "*userid:String,itemid:String,meta:Object"
+		},
+		{
+			"id": "recommendataion_generate",
+			"method": "API",
+			"url": "/api/",
+			"auth": 1,
+			"owner": "controller_api",
+			"params": "*userid:String"
+		},
+		{
+			"method": "POST",
+			"url": "/api/",
+			"auth": 1,
+			"owner": "controller_api"
+		}
+	],
+	"actions": [
+		{
+			"name": "Recommendation --> generate",
+			"params": "*userid:String"
+		},
+		{
+			"name": "Tracking --> view",
+			"input": "*userid:String,itemid:String,meta:Object"
+		},
+		{
+			"name": "Tracking --> purchase",
+			"input": "*userid:String,itemid:String,meta:Object"
+		},
+		{
+			"name": "Tracking --> wishlist",
+			"input": "*userid:String,itemid:String,meta:Object"
+		},
+		{
+			"name": "Tracking --> cart",
+			"input": "*userid:String,itemid:String,meta:Object"
+		}
+	]
+}
