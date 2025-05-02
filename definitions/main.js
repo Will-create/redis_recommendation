@@ -66,7 +66,7 @@ The component will register redis store component. The input must contain the id
 </header>
 </body>
 `;
-global.REDIS_STORE = function(name) {
+ function Redistore (name) {
 	var ttl = 60;
 	var hasttl = name.indexOf('/') > -1;
 	let self = this;
@@ -79,40 +79,9 @@ global.REDIS_STORE = function(name) {
 	self.ttl = ttl;
 
 	self.name = name;
-
-	let redistore = name;
-
-	ON('redisstore', function(instance) {
-		var arr = [];
-
-		// First i create component 1
-		arr.push(function(next) {
-			var body = component1.args({ id: redistore, name: redistore });
-			instance.add('on' + redistore, body, async function(error, res) {
-				next();
-			});
-		});
-
-		// THen create component 2
-		arr.push(function(next) {
-			var body = component2.args({ id: redistore, name: redistore });
-			instance.add(redistore, body, async function(error, res) {
-				next();
-			});
-		});
-
-		// Finally run asunc
-		arr.async(function() {
-			Flow.rpc(redistore, async function(data, callback) {
-				var response = await self[data.key](data.a,data.b, data.c);
-				callback(response);
-			});
-		})
-
-	});
 };
 
-var rsproto = REDIS_STORE.prototype;
+var rsproto = Redistore.prototype;
 
 rsproto.autoquery = function(query) {
 	var temp = [];
@@ -126,7 +95,7 @@ rsproto.autoquery = function(query) {
 rsproto.userid = function(userid) {
 	if (this.name.indexOf(userid) == -1)
 		this.name = this.name + ':' + userid;
-	this.userid = userid;
+	this.$userid = userid;
 	return this;
 };
 
@@ -184,7 +153,6 @@ rsproto.set = function(k, v) {
 		try {
 			await MAIN.redisclient.json.set(key, '$', v);
 			await MAIN.redisclient.expire(key, self.ttl);
-			Flow.input(self.name, '@set', { user: self.userid , model: v, ttl: self.ttl });
 			resolve();
 		} catch (err) {
 			console.error("Error setting value in RedisJSON:", err);
@@ -272,9 +240,6 @@ rsproto.searchVector = function(queryVector, topK = 5) {
 };
 
 
+global.REDIS_STORE = Redistore;
+console.log(REDIS_STORE);
 
-// Initialize the recommendation store
-MAIN.recommendationStore = new REDIS_STORE('recommendations/3600'); // 1-hour TTL
-
-// Initialize user behavior tracking store
-MAIN.userBehaviorStore = new REDIS_STORE('user_behaviors/86400');

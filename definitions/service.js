@@ -1,3 +1,20 @@
+	MAIN.recommendationStore = new REDIS_STORE('recommendations/3600'); // 1-hour TTL
+	MAIN.popularProductStore = new REDIS_STORE('popularProducts/3600'); // 1-hour TTL
+
+	// Initialize user behavior tracking store
+	MAIN.userBehaviorStore = new REDIS_STORE('userbehaviors/86400');
+
+ON('ready', async function() {
+	var userid = '1c1jc001ax51d';
+	// Initialize the recommendation store
+
+	var resultat = await FUNC.generateRecommendations(userid);
+
+
+	console.log('Result: ', resultat);
+
+});
+
 // Track user views, purchases, wishlist additions, etc.
 async function track(userId, itemId, behaviorType, metadata = {}) {
     if (!userId || !itemId) return;
@@ -43,7 +60,7 @@ FUNC.trackCart = async function (userId, itemId, metadata = {}) {
 
 
 // Generate recommendations for a user
-async function generateRecommendations(userId) {
+FUNC.generateRecommendations = async function (userId) {
     if (!userId) return [];
 
     // Check if recommendations already exist and are fresh
@@ -149,11 +166,11 @@ async function generateRecommendations(userId) {
     });
 
     // Get popular/trending items to supplement recommendations
-    let popularItems = await MAIN.recommendationStore.get('popular');
+    let popularItems = await MAIN.popularProductStore.get();
     if (!popularItems) {
         // If no popular items are cached, fetch them
         popularItems = await fetchPopularItems();
-        await MAIN.recommendationStore.set('popular', popularItems);
+        await MAIN.recommendationStore.set(popularItems);
     }
 
     // Find similar items based on tags and categories
@@ -190,7 +207,7 @@ async function generateRecommendations(userId) {
     await MAIN.recommendationStore.userid(userId).set('personalized', recommendations);
 
     return recommendations;
-}
+};
 
 // Helper function to fetch popular items
 async function fetchPopularItems() {
@@ -207,8 +224,3 @@ async function fetchSimilarItems(tags, categories) {
     // For now, we'll return a placeholder
     return [];
 }
-
-ON('ready', async function() {
-    const userCart = await APICALL('Customers --> userfollowings').params({ id: '1c1jc001ax51d' }).user({ id: '1c1jc001ax51d' }).promise();
-	console.log(userCart);
-})

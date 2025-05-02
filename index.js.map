@@ -33,7 +33,7 @@
 			"input": "*userid:String,itemid:String,meta:Object"
 		},
 		{
-			"id": "recommendataion_generate",
+			"id": "generate",
 			"method": "API",
 			"url": "/api/",
 			"auth": 1,
