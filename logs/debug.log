@@ -1,0 +1,238 @@
+> DEBUG PID: 1381 (v4)
+[Function: Redistore]
+====================================================
+PID           : 1421
+Node.js       : v16.20.2
+Total.js      : v4097
+OS            : linux 5.10.70
+Memory        : 15.29 MB / 20.64 MB
+User          : root
+====================================================
+Name          : Total.js
+Version       : 1.0.0
+Date          : 2025-05-03 03:00:44
+Mode          : debug
+====================================================
+Directory     : /www/www/muald_com-recommendation
+node_modules  : /www/node_modules/total4/
+====================================================
+
+Socket: /www/www/muald_com-recommendation/superadmin.socket
+
+CONNECTED TO REDIS SERVER!
+Fetching data from:  https://api.muald.com/schemas/call/?call=Customer/Wishlist --> userlist&token=9alZxj9ny1irOtjB3mFmkCjaYo9CjaZ6k5x&params=id_1c1jc001ax51d&user=id_1c1jc001ax51d:sa_false
+Fetching data from:  https://api.muald.com/schemas/call/?call=Customers/Cart --> usercart&token=9alZxj9ny1irOtjB3mFmkCjaYo9CjaZ6k5x&params=id_1c1jc001ax51d&user=id_1c1jc001ax51d:sa_false
+Fetching data from:  https://api.muald.com/schemas/call/?call=Customer/Tags --> usertags&token=9alZxj9ny1irOtjB3mFmkCjaYo9CjaZ6k5x&params=id_1c1jc001ax51d&user=id_1c1jc001ax51d:sa_false
+Fetching data from:  https://api.muald.com/schemas/call/?call=Customers --> userorders&token=9alZxj9ny1irOtjB3mFmkCjaYo9CjaZ6k5x&params=id_1c1jc001ax51d&user=id_1c1jc001ax51d:sa_false
+Result:  [
+  {
+    id: '1lo99001hn51d',
+    score: 3,
+    tags: [],
+    category: {
+      id: '18',
+      parentid: '7',
+      name: 'Graphic t-shirts',
+      name_en: 'Graphic T-shirts',
+      picture: '/files/categories/1fsej002ai50d-se.jpg',
+      icon: null,
+      search: 'graphic tshirts',
+      search_en: 'graphic tshirts',
+      checksum: null,
+      linker: 'graphic-t-shirts',
+      linker_en: 'graphictshirts',
+      reference: null,
+      flags: null,
+      isremoved: false,
+      dtcreated: 2024-05-14T12:21:50.513Z,
+      dtconfirmed: null,
+      dtupdated: 2024-09-08T20:50:55.626Z,
+      dtremoved: null,
+      timestamp: null,
+      istop: false,
+      sortindex: null,
+      isdisabled: false,
+      typeid: '11gbv001ci51d'
+    }
+  },
+  {
+    id: '1dqsq001wn51d',
+    score: 3,
+    tags: [],
+    category: {
+      id: '17',
+      parentid: '7',
+      name: 'Plain t-shirts',
+      name_en: 'Plain T-shirts',
+      picture: '/files/categories/1fsej003ai51d-sg.webp',
+      icon: null,
+      search: 'plain tshirts',
+      search_en: 'plain tshirts',
+      checksum: null,
+      linker: 'plain-t-shirts',
+      linker_en: 'plaintshirts',
+      reference: null,
+      flags: null,
+      isremoved: false,
+      dtcreated: 2024-05-14T12:21:50.513Z,
+      dtconfirmed: null,
+      dtupdated: 2024-09-08T20:50:55.626Z,
+      dtremoved: null,
+      timestamp: null,
+      istop: false,
+      sortindex: null,
+      isdisabled: false,
+      typeid: '1cuxm001ca51d'
+    }
+  },
+  {
+    id: '1dobk001wn51d',
+    score: 3,
+    tags: [],
+    category: {
+      id: '17',
+      parentid: '7',
+      name: 'Plain t-shirts',
+      name_en: 'Plain T-shirts',
+      picture: '/files/categories/1fsej003ai51d-sg.webp',
+      icon: null,
+      search: 'plain tshirts',
+      search_en: 'plain tshirts',
+      checksum: null,
+      linker: 'plain-t-shirts',
+      linker_en: 'plaintshirts',
+      reference: null,
+      flags: null,
+      isremoved: false,
+      dtcreated: 2024-05-14T12:21:50.513Z,
+      dtconfirmed: null,
+      dtupdated: 2024-09-08T20:50:55.626Z,
+      dtremoved: null,
+      timestamp: null,
+      istop: false,
+      sortindex: null,
+      isdisabled: false,
+      typeid: '1cuxm001ca51d'
+    }
+  },
+  {
+    id: '1dgig001ir51d',
+    score: 3,
+    tags: [],
+    category: {
+      id: '18',
+      parentid: '7',
+      name: 'Graphic t-shirts',
+      name_en: 'Graphic T-shirts',
+      picture: '/files/categories/1fsej002ai50d-se.jpg',
+      icon: null,
+      search: 'graphic tshirts',
+      search_en: 'graphic tshirts',
+      checksum: null,
+      linker: 'graphic-t-shirts',
+      linker_en: 'graphictshirts',
+      reference: null,
+      flags: null,
+      isremoved: false,
+      dtcreated: 2024-05-14T12:21:50.513Z,
+      dtconfirmed: null,
+      dtupdated: 2024-09-08T20:50:55.626Z,
+      dtremoved: null,
+      timestamp: null,
+      istop: false,
+      sortindex: null,
+      isdisabled: false,
+      typeid: '11gbv001ci51d'
+    }
+  },
+  {
+    id: '1dgid001ir51d',
+    score: 3,
+    tags: [],
+    category: {
+      id: '18',
+      parentid: '7',
+      name: 'Graphic t-shirts',
+      name_en: 'Graphic T-shirts',
+      picture: '/files/categories/1fsej002ai50d-se.jpg',
+      icon: null,
+      search: 'graphic tshirts',
+      search_en: 'graphic tshirts',
+      checksum: null,
+      linker: 'graphic-t-shirts',
+      linker_en: 'graphictshirts',
+      reference: null,
+      flags: null,
+      isremoved: false,
+      dtcreated: 2024-05-14T12:21:50.513Z,
+      dtconfirmed: null,
+      dtupdated: 2024-09-08T20:50:55.626Z,
+      dtremoved: null,
+      timestamp: null,
+      istop: false,
+      sortindex: null,
+      isdisabled: false,
+      typeid: '11gbv001ci51d'
+    }
+  },
+  {
+    id: '1dghx001ir51d',
+    score: 3,
+    tags: [],
+    category: {
+      id: '18',
+      parentid: '7',
+      name: 'Graphic t-shirts',
+      name_en: 'Graphic T-shirts',
+      picture: '/files/categories/1fsej002ai50d-se.jpg',
+      icon: null,
+      search: 'graphic tshirts',
+      search_en: 'graphic tshirts',
+      checksum: null,
+      linker: 'graphic-t-shirts',
+      linker_en: 'graphictshirts',
+      reference: null,
+      flags: null,
+      isremoved: false,
+      dtcreated: 2024-05-14T12:21:50.513Z,
+      dtconfirmed: null,
+      dtupdated: 2024-09-08T20:50:55.626Z,
+      dtremoved: null,
+      timestamp: null,
+      istop: false,
+      sortindex: null,
+      isdisabled: false,
+      typeid: '11gbv001ci51d'
+    }
+  },
+  {
+    id: '1dghr001ir51d',
+    score: 3,
+    tags: [],
+    category: {
+      id: '18',
+      parentid: '7',
+      name: 'Graphic t-shirts',
+      name_en: 'Graphic T-shirts',
+      picture: '/files/categories/1fsej002ai50d-se.jpg',
+      icon: null,
+      search: 'graphic tshirts',
+      search_en: 'graphic tshirts',
+      checksum: null,
+      linker: 'graphic-t-shirts',
+      linker_en: 'graphictshirts',
+      reference: null,
+      flags: null,
+      isremoved: false,
+      dtcreated: 2024-05-14T12:21:50.513Z,
+      dtconfirmed: null,
+      dtupdated: 2024-09-08T20:50:55.626Z,
+      dtremoved: null,
+      timestamp: null,
+      istop: false,
+      sortindex: null,
+      isdisabled: false,
+      typeid: '11gbv001ci51d'
+    }
+  }
+]
