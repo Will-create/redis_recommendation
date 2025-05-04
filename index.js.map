@@ -41,6 +41,13 @@
 			"params": "*userid:String"
 		},
 		{
+			"id": "popular",
+			"method": "API",
+			"url": "/api/",
+			"auth": 1,
+			"owner": "controller_api"
+		},
+		{
 			"method": "POST",
 			"url": "/api/",
 			"auth": 1,
@@ -51,6 +58,9 @@
 		{
 			"name": "Recommendation --> generate",
 			"params": "*userid:String"
+		},
+		{
+			"name": "Recommendation --> popular"
 		},
 		{
 			"name": "Tracking --> view",

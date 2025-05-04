@@ -4,4 +4,5 @@ exports.install = function() {
 	ROUTE('+API      /api/      +tracking_wishlist        *Tracking --> wishlist');
 	ROUTE('+API      /api/      +tracking_cart        *Tracking --> cart');
 	ROUTE('+API      /api/      -generate/{userid}        *Recommendation --> generate');
+	ROUTE('+API      /api/      -popular              *Recommendation --> popular');
 };
